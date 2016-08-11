@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title> Sprint Burndown </title>
+        <style>
+
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #fff;
+}
+
+form[name=input] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ccc;
+    border: 1px #888 solid;
+    width: 12em;
+    padding: 1em;
+}
+
+form p {
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+}
+
+label{
+    display: inline-block;
+    width: 4em;
+    margin:0;
+}
+
+input {
+    font-size: 0.8em;
+    width: 12em;
+    margin: 0
+}
+
+input[type=number] {
+    font-size: 0.8em;
+    width: 5em;
+    text-align: right;
+}
+
+input[name=print]{
+    width: 9.6em;
+    margin-left: 5em;
+}
+
+canvas {
+    width: 286mm;
+    height: 199mm;
+    margin: 0;
+}
+
+@page {
+    size: 297mm 210mm;
+    margin: 5mm 5mm 5mm 5mm;
+}
+
+@media print {
+    form {
+        display: none !important;
+    }
+}
+
+        </style>
+    </head>
+    <body>
+        <form name="input">
+            <p><label>Start date</label><input type="date" name="starts"></p>
+            <p><label>End date</label><input type="date" name="ends"></p>
+            <p><label>Points</label><input type="number" min="1" name="points" value="50" size="2"></p>
+            <p><label>Buffer</label><input type="number" min="0" name="buffer" value="0"></p>
+            <p><input type="submit" name="print" value="Print"></p>
+        </form>
+        <canvas></canvas>
+        <script><%-script%></script>
+    </body>
+</html>
